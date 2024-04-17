@@ -1,26 +1,54 @@
+#include <Servo.h>
+
+Servo myservo;
+
+const int servoPin = 9
+
 #define LED_PIN 4
+#define LED_PIN 6
 #define BUTTON_PIN_1 2
 #define BUTTON_PIN_2 7
 
 void setup() {
-  pinMode(LED_PIN, OUTPUT);
+  myservo.attach(9);
+  pinMode(LED_PIN_1, OUTPUT);
+  pinMode(LED_PIN_2, OUTPUT);
   pinMode(BUTTON_PIN_1, INPUT_PULLUP);
   pinMode(BUTTON_PIN_2, INPUT_PULLUP);
+  pinMode(BUTTON_PIN_3, INPUT_PULLUP);
+  pinMode(BUTTON_PIN_4, INPUT_PULLUP);
+  pinMode(BUTTON_PIN_5, INPUT_PULLUP);
 }
 
 void loop() {
   int buttonState1 = digitalRead(BUTTON_PIN_1);
   int buttonState2 = digitalRead(BUTTON_PIN_2);
+  int buttonState3 = digitalRead(BUTTON_PIN_3);
+  int buttonState4 = digitalRead(BUTTON_PIN_4);
+  int buttonState5 = digitalRead(BUTTON_PIN_5);
 
   if (buttonState1 == LOW) {
-    digitalWrite(LED_PIN, HIGH);
+    digitalWrite(LED_PIN_1, HIGH);
   } else {
     digitalWrite(LED_PIN, LOW);
   }
 
   if (buttonState2 == LOW) {
-    digitalWrite(LED_PIN, HIGH);
+    digitalWrite(LED_PIN_2, HIGH);
   } else {
     digitalWrite(LED_PIN, LOW);
   }
+
+  if (buttonState3 == LOW) {
+    myservo.write(90);
+  } else {
+    myservo.write(0);
+  }
+
+   if (buttonState4 == LOW) {
+    myservo.write(90);
+  } else {
+    myservo.write(0);
+  }
 }
+
