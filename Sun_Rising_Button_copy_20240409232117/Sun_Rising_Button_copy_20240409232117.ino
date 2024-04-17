@@ -45,16 +45,10 @@ void loop() {
     digitalWrite(LED_PIN_2, HIGH);
   }
 
-  if (buttonState3 == LOW) {
-    myservo_1.write(180);
-  } else {
+  if (buttonState3 == HIGH || buttonState4 == HIGH) {
     myservo_1.write(0);
-  }
-
-   if (buttonState4 == LOW) {
-    myservo_1.write(180);
   } else {
-    myservo_1.write(0);
+    myservo_1.write(180);
   }
 
      if (buttonState5 == LOW) {
