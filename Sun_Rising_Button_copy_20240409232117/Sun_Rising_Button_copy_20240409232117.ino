@@ -1,24 +1,26 @@
-const int buttonPin = 2; 
-int buttonState = 0;
-int previousButtonState = 0;
+#define LED_PIN 4
+#define BUTTON_PIN_1 2
+#define BUTTON_PIN_2 7
 
 void setup() {
-  pinMode(buttonPin, INPUT); 
-  Serial.begin(9600); 
-
+  pinMode(LED_PIN, OUTPUT);
+  pinMode(BUTTON_PIN_1, INPUT_PULLUP);
+  pinMode(BUTTON_PIN_2, INPUT_PULLUP);
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
-  buttonState = digitalRead(buttonPin); 
+  int buttonState1 = digitalRead(BUTTON_PIN_1);
+  int buttonState2 = digitalRead(BUTTON_PIN_2);
 
-  if (buttonState != previousButtonState) {
-    if (buttonState == HIGH){
-      Serial.println("THE SUN RISES"); 
-    } else { 
-      Serial.println(" THE SUN FALLS");
-    }
+  if (buttonState1 == LOW) {
+    digitalWrite(LED_PIN, HIGH);
+  } else {
+    digitalWrite(LED_PIN, LOW);
   }
-  previousButtonState = buttonState; 
+
+  if (buttonState2 == LOW) {
+    digitalWrite(LED_PIN, HIGH);
+  } else {
+    digitalWrite(LED_PIN, LOW);
+  }
 }
-(looks good, might need to tweak the button code)
