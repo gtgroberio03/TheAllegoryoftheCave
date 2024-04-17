@@ -3,8 +3,8 @@
 Servo myservo_1;
 Servo myservo_2;
 
-const int servoPin_1 = 9
-const int servoPin_2 = 10
+const int servoPin_1 = 9;
+const int servoPin_2 = 10;
 
 #define LED_PIN_1 7
 #define LED_PIN_2 8
@@ -34,15 +34,15 @@ void loop() {
   int buttonState5 = digitalRead(BUTTON_PIN_5);
 
   if (buttonState1 == LOW) {
-    digitalWrite(LED_PIN_1, HIGH);
+    digitalWrite(LED_PIN_1, LOW);
   } else {
-    digitalWrite(LED_PIN, LOW);
+    digitalWrite(LED_PIN_1, HIGH);
   }
 
   if (buttonState2 == LOW) {
-    digitalWrite(LED_PIN_2, HIGH);
+    digitalWrite(LED_PIN_2, LOW);
   } else {
-    digitalWrite(LED_PIN, LOW);
+    digitalWrite(LED_PIN_2, HIGH);
   }
 
   if (buttonState3 == LOW) {
