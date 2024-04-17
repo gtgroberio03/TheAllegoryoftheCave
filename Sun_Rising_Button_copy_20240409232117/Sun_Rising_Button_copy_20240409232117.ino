@@ -4,19 +4,19 @@ Servo myservo_1;
 Servo myservo_2;
 
 const int servoPin_1 = 9
-const int servoPin_2 = 3
+const int servoPin_2 = 10
 
-#define LED_PIN_1 4
-#define LED_PIN_2 6
+#define LED_PIN_1 7
+#define LED_PIN_2 8
 #define BUTTON_PIN_1 2
-#define BUTTON_PIN_2 7
-#define BUTTON_PIN_3 5
-#define BUTTON_PIN_4 8
-#define BUTTON_PIN_5 1
+#define BUTTON_PIN_2 3
+#define BUTTON_PIN_3 4
+#define BUTTON_PIN_4 5
+#define BUTTON_PIN_5 6
 
 void setup() {
   myservo_1.attach(9);
-  myservo_2.attach(3);
+  myservo_2.attach(10);
   pinMode(LED_PIN_1, OUTPUT);
   pinMode(LED_PIN_2, OUTPUT);
   pinMode(BUTTON_PIN_1, INPUT_PULLUP);
@@ -46,19 +46,19 @@ void loop() {
   }
 
   if (buttonState3 == LOW) {
-    myservo_1.write(90);
+    myservo_1.write(180);
   } else {
     myservo_1.write(0);
   }
 
    if (buttonState4 == LOW) {
-    myservo_1.write(90);
+    myservo_1.write(180);
   } else {
     myservo_1.write(0);
   }
 
      if (buttonState5 == LOW) {
-    myservo_2.write(180);
+    myservo_2.write(90);
   } else {
     myservo_2.write(0);
   }
