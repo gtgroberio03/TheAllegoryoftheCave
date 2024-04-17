@@ -1,16 +1,22 @@
 #include <Servo.h>
 
-Servo myservo;
+Servo myservo_1;
+Servo myservo_2;
 
-const int servoPin = 9
+const int servoPin_1 = 9
+const int servoPin_2 = 3
 
-#define LED_PIN 4
-#define LED_PIN 6
+#define LED_PIN_1 4
+#define LED_PIN_2 6
 #define BUTTON_PIN_1 2
 #define BUTTON_PIN_2 7
+#define BUTTON_PIN_3 5
+#define BUTTON_PIN_4 8
+#define BUTTON_PIN_5 1
 
 void setup() {
-  myservo.attach(9);
+  myservo_1.attach(9);
+  myservo_2.attach(3);
   pinMode(LED_PIN_1, OUTPUT);
   pinMode(LED_PIN_2, OUTPUT);
   pinMode(BUTTON_PIN_1, INPUT_PULLUP);
@@ -40,15 +46,20 @@ void loop() {
   }
 
   if (buttonState3 == LOW) {
-    myservo.write(90);
+    myservo_1.write(90);
   } else {
-    myservo.write(0);
+    myservo_1.write(0);
   }
 
    if (buttonState4 == LOW) {
-    myservo.write(90);
+    myservo_1.write(90);
   } else {
-    myservo.write(0);
+    myservo_1.write(0);
+  }
+
+     if (buttonState5 == LOW) {
+    myservo_2.write(180);
+  } else {
+    myservo_2.write(0);
   }
 }
-
