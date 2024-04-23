@@ -3,11 +3,11 @@
 Servo myservo_1;
 Servo myservo_2;
 
-const int servoPin_1 = 9;
-const int servoPin_2 = 10;
+const int servoPin_1 = 7;
+const int servoPin_2 = 8;
 
-#define LED_PIN_1 7
-#define LED_PIN_2 8
+#define LED_PIN_1 10
+#define LED_PIN_2 11
 #define BUTTON_PIN_1 2
 #define BUTTON_PIN_2 3
 #define BUTTON_PIN_3 4
@@ -15,8 +15,8 @@ const int servoPin_2 = 10;
 #define BUTTON_PIN_5 6
 
 void setup() {
-  myservo_1.attach(9);
-  myservo_2.attach(10);
+  myservo_1.attach(7);
+  myservo_2.attach(8);
   pinMode(LED_PIN_1, OUTPUT);
   pinMode(LED_PIN_2, OUTPUT);
   pinMode(BUTTON_PIN_1, INPUT_PULLUP);
@@ -33,7 +33,7 @@ void loop() {
   int buttonState4 = digitalRead(BUTTON_PIN_4);
   int buttonState5 = digitalRead(BUTTON_PIN_5);
 
-  if (buttonState1 == LOW) {
+  if (buttonState4 == LOW) {
     digitalWrite(LED_PIN_1, LOW);
   } else {
     digitalWrite(LED_PIN_1, HIGH);
@@ -45,7 +45,7 @@ void loop() {
     digitalWrite(LED_PIN_2, HIGH);
   }
 
-  if (buttonState3 == HIGH || buttonState4 == HIGH) {
+  if (buttonState1 == HIGH || buttonState3 == HIGH) {
     myservo_1.write(0);
   } else {
     myservo_1.write(180);
