@@ -48,7 +48,7 @@ void loop() {
   if (buttonState1 == HIGH || buttonState3 == HIGH) {
     myservo_1.write(0);
   } else {
-    myservo_1.write(180);
+    myservo_1.write(90);
   }
 
      if (buttonState5 == LOW) {
