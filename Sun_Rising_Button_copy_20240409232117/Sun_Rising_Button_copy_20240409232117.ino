@@ -46,9 +46,12 @@ void loop() {
   }
 
   if (buttonState1 == HIGH || buttonState3 == HIGH) {
-    myservo_1.write(0);
-  } else {
-    myservo_1.write(90);
+    while(digitalRead(BUTTON_PIN_1) == HIGH || digitalRead(BUTTON_PIN_3) == HIGH)
+    {myservo_1.write(40);
+    delay(1000);
+    myservo_1.write(10);
+    delay(1000);
+    }
   }
 
      if (buttonState5 == LOW) {
